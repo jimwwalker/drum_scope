@@ -11,7 +11,10 @@ struct SDL_Texture_Deleter {
 
 class Bar {
 public:
-    Bar(SDL_Renderer& renderer, std::pair<int, int> dimension);
+    Bar(SDL_Renderer& renderer,
+        std::pair<int, int> dimension,
+        int beats,
+        int bpm);
 
     void makeRenderTarget();
 
@@ -20,8 +23,14 @@ public:
     void draw();
 
 private:
+
+    void drawBeats();
+
     std::unique_ptr<SDL_Texture, SDL_Texture_Deleter> texture;
     SDL_Renderer& renderer;
     std::pair<int, int> dimension;
     std::chrono::time_point<std::chrono::high_resolution_clock> start;
+    int beats;
+    int bpm;
+    int pixelsPerMs;
 };
