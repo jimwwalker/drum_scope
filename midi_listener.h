@@ -8,13 +8,13 @@ class BarDrawer;
 
 class MidiListener {
 public:
-    MidiListener(BarDrawer& bd);
+  MidiListener(BarDrawer &bd);
 
 private:
+  static void input(double deltatime, std::vector<unsigned char> *message,
+                    void *ud);
 
-    static void input(double deltatime, std::vector<unsigned char> *message, void* ud);
-
-    BarDrawer& bd;
-    std::thread thread;
-    std::unique_ptr<RtMidiIn> midiin;
+  BarDrawer &bd;
+  std::thread thread;
+  std::unique_ptr<RtMidiIn> midiin;
 };

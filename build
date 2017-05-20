@@ -1,1 +1,4 @@
-clang++ bar_list.cc midi_listener.cc bar.cc bar_drawer.cc main2.cc  -I ~/Code/midi_scope/rtmidi/ -L ~/Code/midi_scope/rtmidi/.libs/ -lrtmidi -std=c++11 -I /usr/local/include/ -L /usr/local/lib/ -lSDL2
+clang++ bar_list.cc midi_listener.cc bar.cc bar_drawer.cc main2.cc -
+    I ~ / Code / midi_scope / rtmidi / -L ~ / Code / midi_scope /
+        rtmidi /.libs / -lrtmidi -
+    std = c++ 14 - I / usr / local / include / -L / usr / local / lib / -lSDL2
